@@ -1,0 +1,36 @@
+{
+  "name": "jillv2",
+  "version": "1.0.0",
+  "description": "Jill learned how to make new drinks!",
+  "main": "jill.js",
+  "scripts": {
+    "start": "node jill.js"
+  },
+  "keywords": [
+    "discord",
+    "jill"
+  ],
+  "author": "Rosalina",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/rest": "^0.3.0",
+    "@discordjs/voice": "^0.8.0",
+    "@distube/ytdl-core": "^4.11.3",
+    "bitly": "^7.1.2",
+    "cowsay": "^1.5.0",
+    "cross-fetch": "^3.1.5",
+    "discord-api-types": "^0.28.0",
+    "discord.js": "^13.6.0",
+    "distube": "^3.3.2",
+    "dotenv": "^16.0.0",
+    "ffmpeg-static": "^4.4.1",
+    "libsodium-wrappers": "^0.7.9",
+    "selenium-webdriver": "^4.1.1",
+    "tenorjs": "^1.0.8",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2"
+  }
+}
