@@ -217,7 +217,7 @@ client.on("message", function (msg) {
     const msgStrings = ["hogwart", "rowling", "harry potter"];
     if (msgStrings.some((v) => msg.content.includes(v))) {
         //msg.channel.send("Слава Україні!");
-        console.log("https://shinigami-eyes.github.io/")
+        msg.channel.send("Did I hear a 'no-no' word? Go check: https://shinigami-eyes.github.io/")
     }
 });
 
