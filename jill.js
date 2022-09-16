@@ -161,7 +161,6 @@ client.on("message", function (msg) {
     }
     const subredditRegex = /r\/([a-zA-Z0-9-_]*)/;
     result = msg.content.match(subredditRegex);
-    console.log(result);
     if (result != null) {
         if (result.length !== 0) {
             msg.reply(
@@ -206,6 +205,19 @@ client.on("message", function (msg) {
     const rusStrings = ["ukrain", "kijów", "kijow"];
     if (rusStrings.some((v) => msg.content.includes(v))) {
         msg.channel.send("Слава Україні!");
+    }
+});
+
+// Fuck TERFs
+// 
+client.on("message", function (msg) {
+    if (my(msg)) {
+        return;
+    }
+    const msgStrings = ["hogwart", "rowling", "harry potter"];
+    if (msgStrings.some((v) => msg.content.includes(v))) {
+        //msg.channel.send("Слава Україні!");
+        console.log("https://shinigami-eyes.github.io/")
     }
 });
 
