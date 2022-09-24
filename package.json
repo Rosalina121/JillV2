@@ -26,6 +26,7 @@
     "dotenv": "^16.0.0",
     "ffmpeg-static": "^4.4.1",
     "libsodium-wrappers": "^0.7.9",
+    "request": "^2.88.2",
     "selenium-webdriver": "^4.1.1",
     "tenorjs": "^1.0.8",
     "tweetnacl": "^1.0.3"

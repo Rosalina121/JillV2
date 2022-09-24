@@ -5,6 +5,7 @@ require("dotenv").config();
 const { Client, VoiceChannel, Intents, MessageEmbed } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
+const request = require("request");
 
 // Voice
 const {
@@ -66,7 +67,7 @@ const commandFiles = fs
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
-const testing = true;
+const testing = false;
 const guildId = testing ? "450084991116771328" : "305732910961393666";
 
 for (const file of commandFiles) {
@@ -120,7 +121,6 @@ const updateBitlink = (link, back) => {
     });
     return newBitlink;
 };
-
 
 const getQueerCalendarData = async () => {
     const url = "https://zaimki.pl//api/calendar/today";
@@ -209,15 +209,16 @@ client.on("message", function (msg) {
 });
 
 // Fuck TERFs
-// 
+//
 client.on("message", function (msg) {
     if (my(msg)) {
         return;
     }
     const msgStrings = ["hogwart", "rowling", "harry potter"];
     if (msgStrings.some((v) => msg.content.includes(v))) {
-        //msg.channel.send("Слава Україні!");
-        msg.channel.send("Did I hear a 'no-no' word? Go check: https://shinigami-eyes.github.io/ 🏳️‍⚧️")
+        msg.channel.send(
+            "Did I hear a 'no-no' word? Go check: https://shinigami-eyes.github.io/ 🏳️‍⚧️"
+        );
     }
 });
 
@@ -229,6 +230,14 @@ client.on("interactionCreate", async (interaction) => {
     }
     if (interaction.commandName === "bitches") {
         await interaction.reply("https://i.redd.it/8d30a5nb43i81.jpg");
+    }
+    if (interaction.commandName === "blahaj") {
+        const url = "http://www.reddit.com/r/blahaj/.json";
+        const response = await fetch(url);
+        console.log(response);
+        const data = await response.json();
+        console.log(data.children);
+        return data;
     }
     if (interaction.commandName === "w2g") {
         const url = interaction.options.get("url").value;
@@ -416,7 +425,9 @@ Jukebox:
             throw e;
         }
     }
-
+    if (interaction.commandName === "bitches") {
+        await interaction.reply("https://i.redd.it/i8fu9rvp3xi91.jpg");
+    }
     // Music --------------------------------
     if (interaction.commandName === "play") {
         if (interaction.options.get("tune") == null) {
