@@ -425,7 +425,7 @@ Jukebox:
             throw e;
         }
     }
-    if (interaction.commandName === "bitches") {
+    if (interaction.commandName === "kto") {
         await interaction.reply("https://i.redd.it/i8fu9rvp3xi91.jpg");
     }
     // Music --------------------------------
