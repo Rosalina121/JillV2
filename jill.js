@@ -370,6 +370,7 @@ client.on("interactionCreate", async (interaction) => {
             `Here's what I can do for you, Boss:
 \`\`\`python
 Slash commands:
+/pronouns <pronoun> "Set your pronouns (role)"
 /ping               "Pong!"
 /bitches            "What? No bitches?"
 /w2g <url>          "I'll create a W2G room for you"
