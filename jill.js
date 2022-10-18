@@ -96,6 +96,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
     }
 })();
 
+const pronouns = ["she/her", "he/him", "they/them", "other/ask"];
 // --------------------- Methods ---------------------
 
 // Just so it's shorter and if API changes easier to adapt
@@ -531,6 +532,25 @@ Jukebox:
     // reply with shrug emoticon on commandName === "idk"
     if (interaction.commandName === "idk") {
         await interaction.reply("¯\\_(ツ)_/¯");
+    }
+    if (interaction.commandName === "pronouns") {
+        const pronoun = interaction.options.get("pronoun")?.value;
+        if (pronouns.includes(pronoun)) {
+            let role = interaction.member.guild.roles.cache.find(
+                (role) => role.name === pronoun
+            );
+            if (role)
+                interaction.guild.members.cache
+                    .get(interaction.user.id)
+                    .roles.add(role);
+            interaction.reply("Pronouns set!");
+        } else {
+            // Clear pronouns
+            interaction.member.roles.cache
+                .filter((role) => pronouns.includes(role.name))
+                .map((role) => interaction.member.roles.remove(role));
+            interaction.reply("Pronouns cleared.");
+        }
     }
     if (interaction.commandName === "test") {
         // get image url from getQueerCalendarData()
