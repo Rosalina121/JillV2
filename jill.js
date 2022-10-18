@@ -373,6 +373,7 @@ Slash commands:
 /pronouns <pronoun> "Set your pronouns (role)"
 /ping               "Pong!"
 /bitches            "What? No bitches?"
+/kto                "Pfff, who asked?"
 /w2g <url>          "I'll create a W2G room for you"
 /gif <topic>        "I'll fetch you a gif of your choosing"
 /cowsay <text>      "I'll ask this nice cow to say something for you"
