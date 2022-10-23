@@ -248,15 +248,14 @@ client.on("interactionCreate", async (interaction) => {
             );
             return;
         }
-        fetch("https://w2g.tv/rooms/create.json", {
+        fetch("https://api.w2g.tv/rooms/create.json", {
             method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                w2g_api_key:
-                    "tt7ejfth44j61up9kgjcpo7jku2nps0b7o4mkl60jhgokwu4t6lc87jg1k4ttv6h",
+                w2g_api_key: process.env.W2G_KEY,
                 share: url,
                 bg_color: "#FF2859",
                 bg_opacity: "50"
