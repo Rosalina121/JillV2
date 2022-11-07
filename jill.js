@@ -6,6 +6,7 @@ const { Client, VoiceChannel, Intents, MessageEmbed } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const request = require("request");
+const { getPost, getImage } = require("random-reddit");
 
 // Voice
 const {
@@ -233,12 +234,9 @@ client.on("interactionCreate", async (interaction) => {
         await interaction.reply("https://i.redd.it/8d30a5nb43i81.jpg");
     }
     if (interaction.commandName === "blahaj") {
-        const url = "http://www.reddit.com/r/blahaj/.json";
-        const response = await fetch(url);
-        console.log(response);
-        const data = await response.json();
-        console.log(data.children);
-        return data;
+        const image = await getImage("memes");
+        console.log(image);
+        interaction.reply(image);
     }
     if (interaction.commandName === "w2g") {
         const url = interaction.options.get("url").value;
