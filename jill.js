@@ -235,7 +235,6 @@ client.on("interactionCreate", async (interaction) => {
     }
     if (interaction.commandName === "blahaj") {
         const image = await getImage("blahaj");
-        console.log(image);
         interaction.reply(image);
     }
     if (interaction.commandName === "w2g") {
