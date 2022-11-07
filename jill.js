@@ -234,7 +234,7 @@ client.on("interactionCreate", async (interaction) => {
         await interaction.reply("https://i.redd.it/8d30a5nb43i81.jpg");
     }
     if (interaction.commandName === "blahaj") {
-        const image = await getImage("memes");
+        const image = await getImage("blahaj");
         console.log(image);
         interaction.reply(image);
     }
