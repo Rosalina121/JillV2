@@ -557,10 +557,10 @@ Jukebox:
         const flag = data.eventsRaw[0].flag;
         await interaction.reply(flag);
     }
-    if (interaction.commandName === "test") {
+    if (interaction.commandName === "nwordcount") {
         // get username
-        const username = interaction.author.name;
-        console.log(username);
+        let username = interaction.options.get("user").value;
+
         let reply = `Nword count for user *${username}*:
         Soft r: \`${Math.floor(Math.random * 1000 + 125)}\` times
         Hard r: \`${Math.floor(Math.random * 300 + 67)}\` times`;
@@ -569,8 +569,8 @@ Jukebox:
             Soft r: \`0\` times
             Hard r: \`0\` times`;
         }
-        // get flag from eventsRaw
-        await interaction.reply();
+        
+        await interaction.reply(reply);
     }
 });
 
