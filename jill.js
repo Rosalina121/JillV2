@@ -562,8 +562,8 @@ Jukebox:
         let username = interaction.options.get("username").value;
 
         let reply = `Nword count for user *${username}*:
-        Soft r: \`${Math.floor(Math.random * 1000 + 125)}\` times
-        Hard r: \`${Math.floor(Math.random * 300 + 67)}\` times`;
+        Soft r: \`${Math.floor(Math.random() * 1000 + 125)}\` times
+        Hard r: \`${Math.floor(Math.random() * 300 + 67)}\` times`;
         if (username === "Rosalina") {
             reply = `Nword count for user *${username}*:
             Soft r: \`0\` times
