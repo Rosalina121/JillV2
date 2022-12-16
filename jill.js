@@ -68,7 +68,7 @@ const commandFiles = fs
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
-const testing = true;
+const testing = false;
 const guildId = testing ? "450084991116771328" : "305732910961393666";
 
 for (const file of commandFiles) {
@@ -561,7 +561,7 @@ Jukebox:
         // get username
         let username = interaction.options.get("username").value;
 
-        let reply = `Nword count for user *${username}*:
+        let reply = `Nword count for user **${username}**:
         Soft r: \`${Math.floor(Math.random() * 1000 + 125)}\` times
         Hard r: \`${Math.floor(Math.random() * 300 + 67)}\` times`;
         if (username === "Rosalina") {
