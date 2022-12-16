@@ -564,7 +564,7 @@ Jukebox:
         let reply = `Nword count for user **${username}**:
         Soft r: \`${Math.floor(Math.random() * 1000 + 125)}\` times
         Hard r: \`${Math.floor(Math.random() * 300 + 67)}\` times`;
-        if (username === "Rosalina") {
+        if (username === "Rosalina" || username === "Apyxo") {
             reply = `Nword count for user **${username}**:
 Soft r: \`0\` times
 Hard r: \`0\` times`;
