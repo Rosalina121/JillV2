@@ -559,7 +559,7 @@ Jukebox:
     }
     if (interaction.commandName === "nwordcount") {
         // get username
-        let username = interaction.options.get("user").value;
+        let username = interaction.options.get("username").value;
 
         let reply = `Nword count for user *${username}*:
         Soft r: \`${Math.floor(Math.random * 1000 + 125)}\` times
@@ -569,7 +569,7 @@ Jukebox:
             Soft r: \`0\` times
             Hard r: \`0\` times`;
         }
-        
+
         await interaction.reply(reply);
     }
 });

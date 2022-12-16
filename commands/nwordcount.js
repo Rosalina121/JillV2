@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('bitly')
+		.setName('nwordcount')
 		.setDescription('Jill will check N-word usage.')
 		.addStringOption(option =>
 			option.setName('username')
