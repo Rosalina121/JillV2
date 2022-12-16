@@ -68,7 +68,7 @@ const commandFiles = fs
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
-const testing = false;
+const testing = true;
 const guildId = testing ? "450084991116771328" : "305732910961393666";
 
 for (const file of commandFiles) {
@@ -560,14 +560,14 @@ Jukebox:
     if (interaction.commandName === "test") {
         // get username
         const username = interaction.author.name;
-        console.log(username)
+        console.log(username);
         let reply = `Nword count for user *${username}*:
         Soft r: \`${Math.floor(Math.random * 1000 + 125)}\` times
-        Hard r: \`${Math.floor(Math.random * 300 + 67)}\` times`
+        Hard r: \`${Math.floor(Math.random * 300 + 67)}\` times`;
         if (username === "Rosalina") {
             reply = `Nword count for user *${username}*:
             Soft r: \`0\` times
-            Hard r: \`0\` times`
+            Hard r: \`0\` times`;
         }
         // get flag from eventsRaw
         await interaction.reply();
