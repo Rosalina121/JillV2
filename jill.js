@@ -2,7 +2,13 @@
 require("dotenv").config();
 
 // Import relevant classes from discord.js
-const { Client, VoiceChannel, Intents, MessageEmbed } = require("discord.js");
+const {
+    Client,
+    VoiceChannel,
+    Intents,
+    MessageEmbed,
+    EmbedBuilder
+} = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const request = require("request");
@@ -65,6 +71,10 @@ const commandFiles = fs
     .readdirSync("./commands")
     .filter((file) => file.endsWith(".js"));
 
+// Gadu-Gadu emoticons
+const ggJson = fs.readFileSync("./emoticons.json", "utf8");
+const availableEmoticons = JSON.parse(ggJson).emoticons;
+console.log(availableEmoticons);
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
@@ -569,8 +579,26 @@ Jukebox:
 Soft r: \`0\` times
 Hard r: \`0\` times`;
         }
-
         await interaction.reply(reply);
+    }
+    if (interaction.commandName === "gg") {
+        let reply = "Did you make a typo?";
+        let emoticon = interaction.options.get("emoticon")?.value;
+        if (emoticon) {
+            if (availableEmoticons.includes(emoticon)) {
+                const ggUrl = `https://www.ggapp.com/6.31.1/images/emoticons/${emoticon}.gif`;
+
+                await interaction.reply(ggUrl);
+            }
+        } else {
+            await interaction.reply({
+                content:
+                    "```\n" +
+                    availableEmoticons.toString().replaceAll(",", "\n") +
+                    "```",
+                ephemeral: true
+            });
+        }
     }
 });
 
