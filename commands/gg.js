@@ -7,7 +7,7 @@ module.exports = {
         .addStringOption(option =>
 			option.setName('emoticon')
 				.setDescription('Which one to send?')
-				.setRequired(false))
+				.setRequired(false)
 				.addChoice("usmiech")
 				.addChoice("ostr")
 				.addChoice("kwadr")
@@ -200,6 +200,6 @@ module.exports = {
 				.addChoice("tuptup")
 				.addChoice("uczen")
 				.addChoice("usmiech2")
-				.addChoice("oczko")
+				.addChoice("oczko"))
 		,
 };
