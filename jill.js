@@ -73,7 +73,8 @@ const commandFiles = fs
 
 // Gadu-Gadu emoticons
 const ggJson = fs.readFileSync("./emoticons.json", "utf8");
-const availableEmoticons = JSON.parse(ggJson).emoticons;
+const availableEmoticons = JSON.parse(ggJson).emoticons.sort();
+
 console.log(availableEmoticons);
 const clientId = "439420686491058176";
 
