@@ -78,7 +78,7 @@ console.log(availableEmoticons);
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
-const testing = false;
+const testing = true;
 const guildId = testing ? "450084991116771328" : "305732910961393666";
 
 for (const file of commandFiles) {
@@ -599,6 +599,19 @@ Hard r: \`0\` times`;
                 ephemeral: true
             });
         }
+    }
+
+    if (interaction.commandName === "getwontresd") {
+        distube.play(
+            interaction.member.voice.channel,
+            "https://youtu.be/u_Vei_DeaCU?t=23",
+            {
+                interaction,
+                textChannel: interaction.channel,
+                member: interaction.member
+            }
+        );
+        await interaction.reply("GET WONTRES'D");
     }
 });
 
