@@ -79,7 +79,7 @@ console.log(availableEmoticons);
 const clientId = "439420686491058176";
 
 // Jill: 450084991116771328, Ligo: 305732910961393666
-const testing = true;
+const testing = false;
 const guildId = testing ? "450084991116771328" : "305732910961393666";
 
 for (const file of commandFiles) {
