@@ -124,16 +124,18 @@ const my = (msg) => {
 };
 
 // readline
-do {
+let recursiveReadLine = function () {
     readline.question("Channel name: ", (channelName) => {
         let chan = client.channels.cache.find(
             (channel) => channel.name === channelName
         );
         readline.question("Say: ", (msg) => {
             chan.send(msg);
+            recursiveReadLine();
         });
     });
-} while (true);
+};
+recursiveReadLine();
 
 // Update Bitlink so the back-half is customized
 const updateBitlink = (link, back) => {
