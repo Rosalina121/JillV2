@@ -7,12 +7,19 @@ const {
     VoiceChannel,
     Intents,
     MessageEmbed,
-    EmbedBuilder
+    EmbedBuilder,
+    Channel
 } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const request = require("request");
 const { getPost, getImage } = require("random-reddit");
+
+// CLI
+const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 // Voice
 const {
@@ -115,6 +122,18 @@ const pronouns = ["she/her", "he/him", "they/them", "other/ask"];
 const my = (msg) => {
     return msg.author.bot;
 };
+
+// readline
+do {
+    readline.question("Channel name: ", (channelName) => {
+        let chan = client.channels.cache.find(
+            (channel) => channel.name === channelName
+        );
+        readline.question("Say: ", (msg) => {
+            chan.send(msg);
+        });
+    });
+} while (true);
 
 // Update Bitlink so the back-half is customized
 const updateBitlink = (link, back) => {
