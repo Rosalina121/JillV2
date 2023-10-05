@@ -9,10 +9,12 @@ module.exports = {
                 .setName("pronoun")
                 .setDescription("Whatcha using, Boss?")
                 .setRequired(true)
-                .addChoice("she/her", "she/her")
-                .addChoice("he/him", "he/him")
-                .addChoice("they/them", "they/them")
-                .addChoice("other/ask", "other/ask")
-                .addChoice("Clear pronouns", "clear")
+                .addChoices(
+                    { name: "she/her", value: "she/her" },
+                    { name: "he/him", value: "he/him" },
+                    { name: "they/them", value: "they/them" },
+                    { name: "other/ask", value: "other/ask" },
+                    { name: "Clear pronouns", value: "clear" }
+                )
         )
 };

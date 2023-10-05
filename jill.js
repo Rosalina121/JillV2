@@ -608,7 +608,7 @@ Hard r: \`0\` times`;
         let emoticon = interaction.options.get("emoticon")?.value;
         if (emoticon) {
             if (availableEmoticons.includes(emoticon)) {
-                const ggUrl = `https://www.ggapp.com/6.31.1/images/emoticons/${emoticon}.gif`;
+                const ggUrl = `https://raw.githubusercontent.com/krzyzanowskim/GNUGadu/master/pixmaps/emoticons/${emoticon}.gif`;
 
                 await interaction.reply(ggUrl);
             }
